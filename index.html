@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <title>Bugzilla Comment Threading</title>
-<h1>Bugzilla Comment Threading</h1>
-<section>
-<p>I'm no good at this. Drag the <a href=''>bugzilla comment threading</a> up to your bookmarks and click on it when you want a nice way to view bugzilla bugs. It will re-order the comments so that the conversation flows a bit easier</p>
-</section>
-
+<style type='text/css'>
+	figure { text-align:center; }
+</style>
 <a href="https://github.com/cdolivei/bugzilla-thread/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+
+<h1>Bugzilla Comment Threading</h1>
+<p>I'm no good at this. Drag the <a href='javascript:(function()%20{var%20comments%20=%20document.querySelectorAll(".bz_comment%20>%20.bz_comment_text");var%20reply_regex%20=%20/^\(In%20reply%20to(?:%20.+?%20from)?%20comment%20#(\d+)\)/;var%20thread%20=%20new%20Array(comments.length);var%20comments_container%20=%20document.getElementById("c0").parentNode;for%20(var%20i%20=%200;%20i%20<%20comments.length;%20++i){%20var%20match%20=%20reply_regex.exec(comments[i].textContent);%20var%20comment%20=%20comments[i].parentNode;%20thread[i]%20=%200;%20if%20(match%20!==%20null)%20{%20var%20reply_to%20=%20parseInt(match[1],%2010);%20thread[i]%20=%20(thread[reply_to]%20||%200)%20+%201;%20comments_container.removeChild(comment);%20comments_container.insertBefore(comment,%20comments[reply_to].parentNode.nextElementSibling);%20comment.style.marginLeft%20=%20"-moz-calc("%20+%20window.getComputedStyle(comment,%20null).marginLeft%20+%20"%20+%20"%20+%20(thread[i]%20*%202).toString()%20+%20"em"%20+%20")";%20}%20}})()'>bugzilla comment threading</a> up to your bookmarks and click on it when you want a nice way to view bugzilla bugs. It will re-order the comments so that the conversation flows a bit easier</p>
+
+<p>Here is an example!</p>
+<figure>
+	<img src="usual.png">
+	<figcaption>What you usually see</figcaption>
+</figure>
+<figure>
+	<img src="exciting.png">
+	<figcaption>oooh's and aaaah's</figcaption>
+</figure>
